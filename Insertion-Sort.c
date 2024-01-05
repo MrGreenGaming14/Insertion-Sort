@@ -4,13 +4,14 @@
 /**
  * Is the array sorted
  */
-int isSorted(int array[]) {
-  for (int i = 0; i < 10; i++) {
+int isSorted(int array[], int size) {
+  for (int i = 0; i < size; i++) {
     if (array[i] > array[i + 1]) {
       return 0;
+    } else {
+      return 1;
     }
   }
-
   return 1;
 }
 
@@ -29,16 +30,6 @@ void printArray(int array[], int size, char *expression) {
   }
   printf("]");
 }
-
-/**
- *  Partition the array
- */
-void Partition(int arrayFull[], int arrayShort[]) {}
-
-/**
- * Insertion Sort but *recursive*
- */
-void insertionSortRecursive() {}
 
 /*
  * Sort the array
@@ -87,4 +78,9 @@ int main() {
   printArray(array, size, "The initial array is");
   insertionSort(array, size);
   printArray(array, size, "The final array is");
+
+  // Tells if the array is sorted or not
+  if(isSorted(array, size)) {
+    printf("\n\nThis array is sorted!");
+  }
 }
